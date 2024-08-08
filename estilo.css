@@ -1,12 +1,14 @@
-/* Estilos base */
+/* Importación de fuente */
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+/* Reset de estilo base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo del body */
 body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -17,7 +19,7 @@ body {
   background-color: #f9e0e6; /* Fondo rosa claro */
 }
 
-/* Animación de fondo minimalista */
+/* Animación de fondo */
 body::before {
   content: '';
   position: fixed;
@@ -44,17 +46,21 @@ body::before {
   background-color: #ffffff; /* Fondo blanco */
   padding: 20px;
   border-radius: 10px; /* Bordes redondeados */
-  max-width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 600px; /* Ajuste del ancho máximo */
+  margin: 20px auto; /* Centrado del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
 }
 
+/* Estilo de los encabezados */
 h1 {
   font-weight: 600;
   font-size: 32px;
   margin: 20px 0;
   color: #a64d79; /* Color lila */
+  letter-spacing: 1px; /* Espaciado entre letras */
 }
 
+/* Estilo del contenedor flex */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -62,32 +68,35 @@ h1 {
   margin-top: 20px;
 }
 
-/* Contenedores individuales */
+/* Estilo de las áreas de contenido */
 .drop-area,
 .container2 {
   width: 100%;
-  max-width: 400px; /* Ancho máximo para evitar que se vuelva demasiado ancho */
+  max-width: 400px;
   margin: 10px;
   padding: 20px;
-  transition: all .1s ease-in;
+  transition: transform 0.2s ease-in-out; /* Animación de escala */
   background-color: #f3e5f5; /* Fondo lila claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
+/* Efecto hover para las áreas de contenido */
+.drop-area:hover,
+.container2:hover {
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilo específico para drop-area */
 .drop-area {
   border: 2px dashed #cc6699; /* Borde rosa */
-  border-radius: 10px;
 }
 
-.container2 {
-  padding: 10px 20px;
-  background-color: #f8e0e6; /* Fondo rosa claro */
-  overflow-y: auto;
-}
-
-/* Estilo para los enlaces */
+/* Estilo de los enlaces */
 a {
   color: #cc6699; /* Color de los enlaces en rosa */
-  text-decoration: none; /* Eliminar subrayado */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease-in-out; /* Transición del color */
 }
 
 a:hover {
@@ -95,23 +104,24 @@ a:hover {
   text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
-/* Estilo para los botones */
+/* Estilo de los botones */
 button {
   background-color: #e6b3cc; /* Fondo del botón en tono lila claro */
   border: none; /* Sin borde */
   color: #ffffff; /* Texto blanco */
-  padding: 10px 20px; /* Espaciado interno */
-  text-align: center; /* Alineación centrada */
-  text-decoration: none; /* Sin subrayado */
-  display: inline-block; /* Mostrar como bloque en línea */
+  padding: 12px 24px; /* Espaciado interno */
   font-size: 16px; /* Tamaño de la fuente */
-  margin: 4px 2px; /* Márgenes */
+  margin: 10px 0; /* Márgenes */
   cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
   border-radius: 12px; /* Bordes redondeados */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Transiciones */
+  display: inline-block; /* Mostrar como bloque en línea */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 button:hover {
   background-color: #d98cb3; /* Fondo del botón al pasar el mouse */
+  transform: translateY(-3px); /* Efecto de elevación */
 }
 
 /* Estilo para formularios */
@@ -119,10 +129,12 @@ input[type="text"], input[type="email"], textarea {
   width: 100%; /* Ancho completo */
   padding: 12px 20px; /* Espaciado interno */
   margin: 8px 0; /* Márgenes */
-  display: inline-block; /* Mostrar como bloque en línea */
   border: 1px solid #ccc; /* Borde */
   border-radius: 4px; /* Bordes redondeados */
   box-sizing: border-box; /* Incluir relleno y borde en el tamaño total */
+  background-color: #f9f2f4; /* Fondo lila claro */
+  color: #4d004d; /* Color de texto */
+  font-family: inherit; /* Heredar la fuente */
 }
 
 input[type="submit"] {
@@ -132,41 +144,43 @@ input[type="submit"] {
   border: none; /* Sin borde */
   border-radius: 4px; /* Bordes redondeados */
   cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Transiciones */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 input[type="submit"]:hover {
   background-color: #b35986; /* Fondo del botón al pasar el mouse */
+  transform: translateY(-3px); /* Efecto de elevación */
 }
 
-/* Estilos para pantallas más pequeñas */
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
+/* Estilo base para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* Ajuste del ancho máximo del formulario */
+  margin: 20px auto; /* Centrado del formulario */
+}
+
+/* Adaptaciones para dispositivos móviles */
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+    margin: 10px;
   }
 
   .drop-area,
   .container2 {
     width: 90%; /* Reducir el ancho en pantallas más pequeñas */
     max-width: none; /* Restablecer el ancho máximo */
+    padding: 15px;
   }
-}
-/* Estilo base para el formulario */
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px; /* Ancho máximo del formulario */
-  margin: auto; /* Centra el formulario */
-}
 
-/* Estilo para inputs */
-input[type="file"] {
-  margin-bottom: 10px; /* Espacio entre los campos */
-}
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-/* Adaptabilidad para pantallas pequeñas */
-@media (max-width: 600px) {
   form {
-      padding: 10px; /* Espacio interno del formulario */
+    padding: 0 10px;
   }
 }
