@@ -8,7 +8,7 @@ form {
 
 /* Estilo para inputs */
 input[type="file"] {
-    margin-bottom: 10px; /* Espacio entre los campos */
+    margin-bottom: 20px; /* Espacio entre los campos */
 }
 
 /* Adaptabilidad para pantallas pequeñas */
