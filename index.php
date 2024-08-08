@@ -54,7 +54,7 @@ try {
 </head>
 
 <body>
-    <h1>Compartir archivos Datnne <sup class="beta">BETA</sup></h1>
+    <h1>Compartir Datnne <sup class="beta">BETA</sup></h1>
     <div class="content">
         <h3>Sube tus archivos y comparte este enlace temporal: <span>ibu.pe/?nombre=<?php echo $carpetaNombre;?></span></h3>
         <div class="container">
